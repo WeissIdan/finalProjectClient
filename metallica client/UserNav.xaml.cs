@@ -26,6 +26,10 @@ namespace metallica_client
         {
             InitializeComponent();
             curruser = user;
+            if(curruser.Accesslevel == 1)
+            {
+                CreateAdminButton();
+            }
         }
 
         private void Albums_Selected(object sender, RoutedEventArgs e)
@@ -106,6 +110,41 @@ namespace metallica_client
                 ShowUserControl SUC = new ShowUserControl(show);
                 Controls.Children.Add(SUC);
             }
+        }
+        private void ShowAdminData(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void CreateAdminButton()
+        {
+            StackPanel panel = new StackPanel();
+            panel.Orientation = Orientation.Horizontal;
+            panel.Margin = new Thickness(10, 10, 0, 0);
+
+            MaterialDesignThemes.Wpf.PackIcon icon = new MaterialDesignThemes.Wpf.PackIcon();
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Administrator;
+            icon.Width = 20;
+            icon.Height = 20;
+            icon.Foreground = Brushes.LightSteelBlue;
+            icon.Margin = new Thickness(5);
+            icon.VerticalAlignment = VerticalAlignment.Center;
+            icon.FontFamily = new FontFamily("/fonts/#Metallica");
+            panel.Children.Add(icon);
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = "admin";
+            textBlock.Foreground = Brushes.White;
+            textBlock.Margin = new Thickness(10);
+            textBlock.FontWeight = FontWeights.Bold;
+            panel.Children.Add(textBlock);
+
+            ListViewItem listItem = new ListViewItem();
+            listItem.Height = 45;
+            listItem.Padding = new Thickness(0);
+            listItem.Selected += ShowAdminData;
+            listItem.Content = panel;
+
+            GridMenu.Children.Add(listItem);
         }
     }
 }
