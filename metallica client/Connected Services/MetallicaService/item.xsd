@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Album">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlbumName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReleaseDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SongAmount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Album" nillable="true" type="tns:Album" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="AlbumList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Album" nillable="true" type="tns:Album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlbumList" nillable="true" type="tns:AlbumList" />
+  <xs:complexType name="ChatList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chat" nillable="true" type="tns:Chat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChatList" nillable="true" type="tns:ChatList" />
+  <xs:complexType name="Chat">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChatManager" type="xs:int" />
+          <xs:element minOccurs="0" name="ChatName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Chat" nillable="true" type="tns:Chat" />
+  <xs:complexType name="MessagesList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Messages" nillable="true" type="tns:Messages" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessagesList" nillable="true" type="tns:MessagesList" />
+  <xs:complexType name="Messages">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChatId" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Messages" nillable="true" type="tns:Messages" />
+  <xs:complexType name="ShowList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Show" nillable="true" type="tns:Show" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShowList" nillable="true" type="tns:ShowList" />
+  <xs:complexType name="Show">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StadiumName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Show" nillable="true" type="tns:Show" />
+  <xs:complexType name="SongList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Song" nillable="true" type="tns:Song" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SongList" nillable="true" type="tns:SongList" />
+  <xs:complexType name="Song">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlbumId" type="xs:int" />
+          <xs:element minOccurs="0" name="Lyrics" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SongName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Song" nillable="true" type="tns:Song" />
+  <xs:complexType name="UserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Accesslevel" type="xs:int" />
+          <xs:element minOccurs="0" name="Birthdate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMale" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="metallica_client.ChatListUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:metallica_client"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="730">
+    <Grid Background="black">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="chatName"
+                   Text="{Binding ChatName}"
+                   FontSize="30"
+                   Grid.Row="0"
+                   FontFamily="/fonts/#Metallica"
+                   HorizontalAlignment="Center" 
+                   Foreground="White"/>
+        <TextBlock x:Name="creationDate"
+                   Text="{Binding CreationDate, StringFormat={}{0:dd/MM/yyyy}}"
+                   FontSize="26"
+                   Grid.Row="1"
+                   FontFamily="/fonts/#Metallica"
+                   HorizontalAlignment="Center" 
+                   Foreground="White"/>
+        <Button Grid.Row="2" Content="Enter chat" Width="150" Height="60" FontSize="25"
+                Click="Button_Click" />
+    </Grid>
+</UserControl>

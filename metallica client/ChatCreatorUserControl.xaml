@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="metallica_client.ChatCreatorUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:metallica_client"
+             mc:Ignorable="d"
+             d:DesignHeight="140"
+             d:DesignWidth="370">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="chat name:"
+                   FontFamily="/fonts/#Metallica"
+                   Foreground="White"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   HorizontalAlignment="Center"
+                   Height="47" />
+        <TextBox  Background="white"
+                  Grid.Row="1"
+                  Width="200"
+                  Height="35"
+                  VerticalAlignment="Center"
+                  x:Name="chatName"
+                  Foreground="Black" />
+        <Button Grid.Row="3"
+                Width="100"
+                Content="submit" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Click="Submit_Click" />
+    </Grid>
+</UserControl>
