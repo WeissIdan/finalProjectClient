@@ -526,42 +526,42 @@ namespace metallica_client.MetallicaService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="AlbumList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Album")]
     [System.SerializableAttribute()]
-    public class AlbumList : System.Collections.Generic.List<metallica_client.MetallicaService.Album> {
+    public class AlbumList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Album> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ChatList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Chat")]
     [System.SerializableAttribute()]
-    public class ChatList : System.Collections.Generic.List<metallica_client.MetallicaService.Chat> {
+    public class ChatList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Chat> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MessagesList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Messages")]
     [System.SerializableAttribute()]
-    public class MessagesList : System.Collections.Generic.List<metallica_client.MetallicaService.Messages> {
+    public class MessagesList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Messages> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShowList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Show")]
     [System.SerializableAttribute()]
-    public class ShowList : System.Collections.Generic.List<metallica_client.MetallicaService.Show> {
+    public class ShowList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Show> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SongList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Song")]
     [System.SerializableAttribute()]
-    public class SongList : System.Collections.Generic.List<metallica_client.MetallicaService.Song> {
+    public class SongList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Song> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="UserList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="User")]
     [System.SerializableAttribute()]
-    public class UserList : System.Collections.Generic.List<metallica_client.MetallicaService.User> {
+    public class UserList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.User> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -663,6 +663,12 @@ namespace metallica_client.MetallicaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteMessages", ReplyAction="http://tempuri.org/IMetallicaService/DeleteMessagesResponse")]
         System.Threading.Tasks.Task<int> DeleteMessagesAsync(metallica_client.MetallicaService.Messages message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteMessagesByChat", ReplyAction="http://tempuri.org/IMetallicaService/DeleteMessagesByChatResponse")]
+        int DeleteMessagesByChat(metallica_client.MetallicaService.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteMessagesByChat", ReplyAction="http://tempuri.org/IMetallicaService/DeleteMessagesByChatResponse")]
+        System.Threading.Tasks.Task<int> DeleteMessagesByChatAsync(metallica_client.MetallicaService.Chat chat);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllShows", ReplyAction="http://tempuri.org/IMetallicaService/GetAllShowsResponse")]
         metallica_client.MetallicaService.ShowList GetAllShows();
@@ -980,6 +986,14 @@ namespace metallica_client.MetallicaService {
         
         public System.Threading.Tasks.Task<int> DeleteMessagesAsync(metallica_client.MetallicaService.Messages message) {
             return base.Channel.DeleteMessagesAsync(message);
+        }
+        
+        public int DeleteMessagesByChat(metallica_client.MetallicaService.Chat chat) {
+            return base.Channel.DeleteMessagesByChat(chat);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteMessagesByChatAsync(metallica_client.MetallicaService.Chat chat) {
+            return base.Channel.DeleteMessagesByChatAsync(chat);
         }
         
         public metallica_client.MetallicaService.ShowList GetAllShows() {
