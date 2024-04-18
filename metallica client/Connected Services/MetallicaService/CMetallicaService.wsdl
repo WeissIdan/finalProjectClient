@@ -115,30 +115,6 @@
   <wsdl:message name="IMetallicaService_GetAllShows_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllShowsResponse" />
   </wsdl:message>
-  <wsdl:message name="IMetallicaService_GetShow_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShow" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_GetShow_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShowResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_InsertShow_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertShow" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_InsertShow_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertShowResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_UpdateShow_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateShow" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_UpdateShow_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateShowResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_DeleteShow_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteShow" />
-  </wsdl:message>
-  <wsdl:message name="IMetallicaService_DeleteShow_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteShowResponse" />
-  </wsdl:message>
   <wsdl:message name="IMetallicaService_GetAllSongs_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllSongs" />
   </wsdl:message>
@@ -235,6 +211,12 @@
   <wsdl:message name="IMetallicaService_GetAlbumRatingByUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAlbumRatingByUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetSongRatingByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongRatingByUser" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetSongRatingByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongRatingByUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IMetallicaService_InsertSongRating_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertSongRating" />
   </wsdl:message>
@@ -270,6 +252,72 @@
   </wsdl:message>
   <wsdl:message name="IMetallicaService_DeleteAlbumRating_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAlbumRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_InsertCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_InsertCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetCategoryByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByType" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetCategoryByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetAllSongCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSongCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetAllSongCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSongCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_InsertSongCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSongCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_InsertSongCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSongCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_UpdateSongCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSongCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_UpdateSongCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSongCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_DeleteSongCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSongCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_DeleteSongCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSongCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetSongsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetSongsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSongsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_TempInsertAllSongs_InputMessage">
+    <wsdl:part name="parameters" element="tns:TempInsertAllSongs" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_TempInsertAllSongs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TempInsertAllSongsResponse" />
   </wsdl:message>
   <wsdl:portType name="IMetallicaService">
     <wsdl:operation name="InsertAlbum">
@@ -344,22 +392,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAllShows" message="tns:IMetallicaService_GetAllShows_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetAllShowsResponse" message="tns:IMetallicaService_GetAllShows_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetShow">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetShow" message="tns:IMetallicaService_GetShow_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetShowResponse" message="tns:IMetallicaService_GetShow_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertShow">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/InsertShow" message="tns:IMetallicaService_InsertShow_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/InsertShowResponse" message="tns:IMetallicaService_InsertShow_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateShow">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/UpdateShow" message="tns:IMetallicaService_UpdateShow_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/UpdateShowResponse" message="tns:IMetallicaService_UpdateShow_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteShow">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/DeleteShow" message="tns:IMetallicaService_DeleteShow_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/DeleteShowResponse" message="tns:IMetallicaService_DeleteShow_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetAllSongs">
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAllSongs" message="tns:IMetallicaService_GetAllSongs_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetAllSongsResponse" message="tns:IMetallicaService_GetAllSongs_OutputMessage" />
@@ -424,6 +456,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAlbumRatingByUser" message="tns:IMetallicaService_GetAlbumRatingByUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetAlbumRatingByUserResponse" message="tns:IMetallicaService_GetAlbumRatingByUser_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetSongRatingByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetSongRatingByUser" message="tns:IMetallicaService_GetSongRatingByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetSongRatingByUserResponse" message="tns:IMetallicaService_GetSongRatingByUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertSongRating">
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/InsertSongRating" message="tns:IMetallicaService_InsertSongRating_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/InsertSongRatingResponse" message="tns:IMetallicaService_InsertSongRating_OutputMessage" />
@@ -447,6 +483,50 @@
     <wsdl:operation name="DeleteAlbumRating">
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/DeleteAlbumRating" message="tns:IMetallicaService_DeleteAlbumRating_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/DeleteAlbumRatingResponse" message="tns:IMetallicaService_DeleteAlbumRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAllCategories" message="tns:IMetallicaService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetAllCategoriesResponse" message="tns:IMetallicaService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/InsertCategory" message="tns:IMetallicaService_InsertCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/InsertCategoryResponse" message="tns:IMetallicaService_InsertCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/UpdateCategory" message="tns:IMetallicaService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/UpdateCategoryResponse" message="tns:IMetallicaService_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/DeleteCategory" message="tns:IMetallicaService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/DeleteCategoryResponse" message="tns:IMetallicaService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetCategoryByType" message="tns:IMetallicaService_GetCategoryByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetCategoryByTypeResponse" message="tns:IMetallicaService_GetCategoryByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSongCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAllSongCategory" message="tns:IMetallicaService_GetAllSongCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetAllSongCategoryResponse" message="tns:IMetallicaService_GetAllSongCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSongCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/InsertSongCategory" message="tns:IMetallicaService_InsertSongCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/InsertSongCategoryResponse" message="tns:IMetallicaService_InsertSongCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSongCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/UpdateSongCategory" message="tns:IMetallicaService_UpdateSongCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/UpdateSongCategoryResponse" message="tns:IMetallicaService_UpdateSongCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSongCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/DeleteSongCategory" message="tns:IMetallicaService_DeleteSongCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/DeleteSongCategoryResponse" message="tns:IMetallicaService_DeleteSongCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSongsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetSongsByCategory" message="tns:IMetallicaService_GetSongsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetSongsByCategoryResponse" message="tns:IMetallicaService_GetSongsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TempInsertAllSongs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/TempInsertAllSongs" message="tns:IMetallicaService_TempInsertAllSongs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/TempInsertAllSongsResponse" message="tns:IMetallicaService_TempInsertAllSongs_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMetallicaService" type="tns:IMetallicaService">
@@ -613,42 +693,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetShow">
-      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetShow" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertShow">
-      <soap:operation soapAction="http://tempuri.org/IMetallicaService/InsertShow" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateShow">
-      <soap:operation soapAction="http://tempuri.org/IMetallicaService/UpdateShow" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteShow">
-      <soap:operation soapAction="http://tempuri.org/IMetallicaService/DeleteShow" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetAllSongs">
       <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetAllSongs" style="document" />
       <wsdl:input>
@@ -793,6 +837,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSongRatingByUser">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetSongRatingByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertSongRating">
       <soap:operation soapAction="http://tempuri.org/IMetallicaService/InsertSongRating" style="document" />
       <wsdl:input>
@@ -840,6 +893,105 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteAlbumRating">
       <soap:operation soapAction="http://tempuri.org/IMetallicaService/DeleteAlbumRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/InsertCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByType">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetCategoryByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSongCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetAllSongCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSongCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/InsertSongCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSongCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/UpdateSongCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSongCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/DeleteSongCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSongsByCategory">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetSongsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TempInsertAllSongs">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/TempInsertAllSongs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

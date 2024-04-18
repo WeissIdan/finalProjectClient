@@ -32,8 +32,15 @@ namespace metallica_client
             user = cuser;
             song.Lyrics = song.Lyrics.ToLower();
             this.DataContext = song;
+            setup();
         }
-
+        private void setup()
+        {
+            clientService = new MetallicaService.MetallicaServiceClient();
+            int userRating = clientService.GetSongRatingByUser(song.ID, user.ID);
+            if (userRating > 0) { BasicRatingBar.Value = userRating; }
+            else { BasicRatingBar.Value = 0; }
+        }
         private void submitRating(object sender, RoutedEventArgs e)
         {
             clientService = new MetallicaService.MetallicaServiceClient();

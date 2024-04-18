@@ -22,6 +22,8 @@ namespace metallica_client.MetallicaService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.Show))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.Song))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.User))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.Category))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.SongCategory))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(metallica_client.MetallicaService.Album))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -469,6 +471,84 @@ namespace metallica_client.MetallicaService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class Category : metallica_client.MetallicaService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CategoryType {
+            get {
+                return this.CategoryTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryTypeField, value) != true)) {
+                    this.CategoryTypeField = value;
+                    this.RaisePropertyChanged("CategoryType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SongCategory", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class SongCategory : metallica_client.MetallicaService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CategoryIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SongIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CategoryID {
+            get {
+                return this.CategoryIDField;
+            }
+            set {
+                if ((this.CategoryIDField.Equals(value) != true)) {
+                    this.CategoryIDField = value;
+                    this.RaisePropertyChanged("CategoryID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SongID {
+            get {
+                return this.SongIDField;
+            }
+            set {
+                if ((this.SongIDField.Equals(value) != true)) {
+                    this.SongIDField = value;
+                    this.RaisePropertyChanged("SongID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Album", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     public partial class Album : metallica_client.MetallicaService.BaseEntity {
@@ -562,6 +642,20 @@ namespace metallica_client.MetallicaService {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="UserList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="User")]
     [System.SerializableAttribute()]
     public class UserList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.User> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CategoryList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Category")]
+    [System.SerializableAttribute()]
+    public class CategoryList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.Category> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SongCategoryList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="SongCategory")]
+    [System.SerializableAttribute()]
+    public class SongCategoryList : System.Collections.ObjectModel.Collection<metallica_client.MetallicaService.SongCategory> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -676,30 +770,6 @@ namespace metallica_client.MetallicaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllShows", ReplyAction="http://tempuri.org/IMetallicaService/GetAllShowsResponse")]
         System.Threading.Tasks.Task<metallica_client.MetallicaService.ShowList> GetAllShowsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetShow", ReplyAction="http://tempuri.org/IMetallicaService/GetShowResponse")]
-        metallica_client.MetallicaService.Show GetShow(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetShow", ReplyAction="http://tempuri.org/IMetallicaService/GetShowResponse")]
-        System.Threading.Tasks.Task<metallica_client.MetallicaService.Show> GetShowAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertShow", ReplyAction="http://tempuri.org/IMetallicaService/InsertShowResponse")]
-        int InsertShow(metallica_client.MetallicaService.Show show);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertShow", ReplyAction="http://tempuri.org/IMetallicaService/InsertShowResponse")]
-        System.Threading.Tasks.Task<int> InsertShowAsync(metallica_client.MetallicaService.Show show);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateShow", ReplyAction="http://tempuri.org/IMetallicaService/UpdateShowResponse")]
-        int UpdateShow(metallica_client.MetallicaService.Show show);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateShow", ReplyAction="http://tempuri.org/IMetallicaService/UpdateShowResponse")]
-        System.Threading.Tasks.Task<int> UpdateShowAsync(metallica_client.MetallicaService.Show show);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteShow", ReplyAction="http://tempuri.org/IMetallicaService/DeleteShowResponse")]
-        int DeleteShow(metallica_client.MetallicaService.Show show);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteShow", ReplyAction="http://tempuri.org/IMetallicaService/DeleteShowResponse")]
-        System.Threading.Tasks.Task<int> DeleteShowAsync(metallica_client.MetallicaService.Show show);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllSongs", ReplyAction="http://tempuri.org/IMetallicaService/GetAllSongsResponse")]
         metallica_client.MetallicaService.SongList GetAllSongs();
         
@@ -796,6 +866,12 @@ namespace metallica_client.MetallicaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAlbumRatingByUser", ReplyAction="http://tempuri.org/IMetallicaService/GetAlbumRatingByUserResponse")]
         System.Threading.Tasks.Task<int> GetAlbumRatingByUserAsync(int albumId, int userId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetSongRatingByUser", ReplyAction="http://tempuri.org/IMetallicaService/GetSongRatingByUserResponse")]
+        int GetSongRatingByUser(int SongId, int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetSongRatingByUser", ReplyAction="http://tempuri.org/IMetallicaService/GetSongRatingByUserResponse")]
+        System.Threading.Tasks.Task<int> GetSongRatingByUserAsync(int SongId, int userId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertSongRating", ReplyAction="http://tempuri.org/IMetallicaService/InsertSongRatingResponse")]
         int InsertSongRating(int userId, int songId, int rating);
         
@@ -831,6 +907,72 @@ namespace metallica_client.MetallicaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteAlbumRating", ReplyAction="http://tempuri.org/IMetallicaService/DeleteAlbumRatingResponse")]
         System.Threading.Tasks.Task<int> DeleteAlbumRatingAsync(int userId, int albumId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllCategories", ReplyAction="http://tempuri.org/IMetallicaService/GetAllCategoriesResponse")]
+        metallica_client.MetallicaService.CategoryList GetAllCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllCategories", ReplyAction="http://tempuri.org/IMetallicaService/GetAllCategoriesResponse")]
+        System.Threading.Tasks.Task<metallica_client.MetallicaService.CategoryList> GetAllCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertCategory", ReplyAction="http://tempuri.org/IMetallicaService/InsertCategoryResponse")]
+        int InsertCategory(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertCategory", ReplyAction="http://tempuri.org/IMetallicaService/InsertCategoryResponse")]
+        System.Threading.Tasks.Task<int> InsertCategoryAsync(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateCategory", ReplyAction="http://tempuri.org/IMetallicaService/UpdateCategoryResponse")]
+        int UpdateCategory(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateCategory", ReplyAction="http://tempuri.org/IMetallicaService/UpdateCategoryResponse")]
+        System.Threading.Tasks.Task<int> UpdateCategoryAsync(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteCategory", ReplyAction="http://tempuri.org/IMetallicaService/DeleteCategoryResponse")]
+        int DeleteCategory(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteCategory", ReplyAction="http://tempuri.org/IMetallicaService/DeleteCategoryResponse")]
+        System.Threading.Tasks.Task<int> DeleteCategoryAsync(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetCategoryByType", ReplyAction="http://tempuri.org/IMetallicaService/GetCategoryByTypeResponse")]
+        metallica_client.MetallicaService.CategoryList GetCategoryByType(metallica_client.MetallicaService.Category categoryType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetCategoryByType", ReplyAction="http://tempuri.org/IMetallicaService/GetCategoryByTypeResponse")]
+        System.Threading.Tasks.Task<metallica_client.MetallicaService.CategoryList> GetCategoryByTypeAsync(metallica_client.MetallicaService.Category categoryType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/GetAllSongCategoryResponse")]
+        metallica_client.MetallicaService.SongCategoryList GetAllSongCategory();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/GetAllSongCategoryResponse")]
+        System.Threading.Tasks.Task<metallica_client.MetallicaService.SongCategoryList> GetAllSongCategoryAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/InsertSongCategoryResponse")]
+        int InsertSongCategory(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/InsertSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/InsertSongCategoryResponse")]
+        System.Threading.Tasks.Task<int> InsertSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/UpdateSongCategoryResponse")]
+        int UpdateSongCategory(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/UpdateSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/UpdateSongCategoryResponse")]
+        System.Threading.Tasks.Task<int> UpdateSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/DeleteSongCategoryResponse")]
+        int DeleteSongCategory(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteSongCategory", ReplyAction="http://tempuri.org/IMetallicaService/DeleteSongCategoryResponse")]
+        System.Threading.Tasks.Task<int> DeleteSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetSongsByCategory", ReplyAction="http://tempuri.org/IMetallicaService/GetSongsByCategoryResponse")]
+        metallica_client.MetallicaService.SongList GetSongsByCategory(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetSongsByCategory", ReplyAction="http://tempuri.org/IMetallicaService/GetSongsByCategoryResponse")]
+        System.Threading.Tasks.Task<metallica_client.MetallicaService.SongList> GetSongsByCategoryAsync(metallica_client.MetallicaService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/TempInsertAllSongs", ReplyAction="http://tempuri.org/IMetallicaService/TempInsertAllSongsResponse")]
+        void TempInsertAllSongs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/TempInsertAllSongs", ReplyAction="http://tempuri.org/IMetallicaService/TempInsertAllSongsResponse")]
+        System.Threading.Tasks.Task TempInsertAllSongsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1004,38 +1146,6 @@ namespace metallica_client.MetallicaService {
             return base.Channel.GetAllShowsAsync();
         }
         
-        public metallica_client.MetallicaService.Show GetShow(int id) {
-            return base.Channel.GetShow(id);
-        }
-        
-        public System.Threading.Tasks.Task<metallica_client.MetallicaService.Show> GetShowAsync(int id) {
-            return base.Channel.GetShowAsync(id);
-        }
-        
-        public int InsertShow(metallica_client.MetallicaService.Show show) {
-            return base.Channel.InsertShow(show);
-        }
-        
-        public System.Threading.Tasks.Task<int> InsertShowAsync(metallica_client.MetallicaService.Show show) {
-            return base.Channel.InsertShowAsync(show);
-        }
-        
-        public int UpdateShow(metallica_client.MetallicaService.Show show) {
-            return base.Channel.UpdateShow(show);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateShowAsync(metallica_client.MetallicaService.Show show) {
-            return base.Channel.UpdateShowAsync(show);
-        }
-        
-        public int DeleteShow(metallica_client.MetallicaService.Show show) {
-            return base.Channel.DeleteShow(show);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteShowAsync(metallica_client.MetallicaService.Show show) {
-            return base.Channel.DeleteShowAsync(show);
-        }
-        
         public metallica_client.MetallicaService.SongList GetAllSongs() {
             return base.Channel.GetAllSongs();
         }
@@ -1164,6 +1274,14 @@ namespace metallica_client.MetallicaService {
             return base.Channel.GetAlbumRatingByUserAsync(albumId, userId);
         }
         
+        public int GetSongRatingByUser(int SongId, int userId) {
+            return base.Channel.GetSongRatingByUser(SongId, userId);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetSongRatingByUserAsync(int SongId, int userId) {
+            return base.Channel.GetSongRatingByUserAsync(SongId, userId);
+        }
+        
         public int InsertSongRating(int userId, int songId, int rating) {
             return base.Channel.InsertSongRating(userId, songId, rating);
         }
@@ -1210,6 +1328,94 @@ namespace metallica_client.MetallicaService {
         
         public System.Threading.Tasks.Task<int> DeleteAlbumRatingAsync(int userId, int albumId) {
             return base.Channel.DeleteAlbumRatingAsync(userId, albumId);
+        }
+        
+        public metallica_client.MetallicaService.CategoryList GetAllCategories() {
+            return base.Channel.GetAllCategories();
+        }
+        
+        public System.Threading.Tasks.Task<metallica_client.MetallicaService.CategoryList> GetAllCategoriesAsync() {
+            return base.Channel.GetAllCategoriesAsync();
+        }
+        
+        public int InsertCategory(metallica_client.MetallicaService.Category category) {
+            return base.Channel.InsertCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertCategoryAsync(metallica_client.MetallicaService.Category category) {
+            return base.Channel.InsertCategoryAsync(category);
+        }
+        
+        public int UpdateCategory(metallica_client.MetallicaService.Category category) {
+            return base.Channel.UpdateCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateCategoryAsync(metallica_client.MetallicaService.Category category) {
+            return base.Channel.UpdateCategoryAsync(category);
+        }
+        
+        public int DeleteCategory(metallica_client.MetallicaService.Category category) {
+            return base.Channel.DeleteCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteCategoryAsync(metallica_client.MetallicaService.Category category) {
+            return base.Channel.DeleteCategoryAsync(category);
+        }
+        
+        public metallica_client.MetallicaService.CategoryList GetCategoryByType(metallica_client.MetallicaService.Category categoryType) {
+            return base.Channel.GetCategoryByType(categoryType);
+        }
+        
+        public System.Threading.Tasks.Task<metallica_client.MetallicaService.CategoryList> GetCategoryByTypeAsync(metallica_client.MetallicaService.Category categoryType) {
+            return base.Channel.GetCategoryByTypeAsync(categoryType);
+        }
+        
+        public metallica_client.MetallicaService.SongCategoryList GetAllSongCategory() {
+            return base.Channel.GetAllSongCategory();
+        }
+        
+        public System.Threading.Tasks.Task<metallica_client.MetallicaService.SongCategoryList> GetAllSongCategoryAsync() {
+            return base.Channel.GetAllSongCategoryAsync();
+        }
+        
+        public int InsertSongCategory(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.InsertSongCategory(songCategory);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.InsertSongCategoryAsync(songCategory);
+        }
+        
+        public int UpdateSongCategory(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.UpdateSongCategory(songCategory);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.UpdateSongCategoryAsync(songCategory);
+        }
+        
+        public int DeleteSongCategory(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.DeleteSongCategory(songCategory);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteSongCategoryAsync(metallica_client.MetallicaService.SongCategory songCategory) {
+            return base.Channel.DeleteSongCategoryAsync(songCategory);
+        }
+        
+        public metallica_client.MetallicaService.SongList GetSongsByCategory(metallica_client.MetallicaService.Category category) {
+            return base.Channel.GetSongsByCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<metallica_client.MetallicaService.SongList> GetSongsByCategoryAsync(metallica_client.MetallicaService.Category category) {
+            return base.Channel.GetSongsByCategoryAsync(category);
+        }
+        
+        public void TempInsertAllSongs() {
+            base.Channel.TempInsertAllSongs();
+        }
+        
+        public System.Threading.Tasks.Task TempInsertAllSongsAsync() {
+            return base.Channel.TempInsertAllSongsAsync();
         }
     }
 }

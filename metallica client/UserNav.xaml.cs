@@ -33,6 +33,7 @@ namespace metallica_client
             {
                 CreateAdminButton();
             }
+            Controls.Children.Add(new SongChooserUserControl(this));
         }
 
         private void Albums_Selected(object sender, RoutedEventArgs e)
@@ -125,6 +126,20 @@ namespace metallica_client
         {
             AdminShowData();
         }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Application.Current.Shutdown();
+        }
+
+
         public void AdminShowData()
         {
             Controls.Children.Clear();
@@ -168,6 +183,13 @@ namespace metallica_client
             listItem.Content = panel;
 
             buttonList.Items.Add(listItem);
+        }
+
+        private void SettingsSelected(object sender, RoutedEventArgs e)
+        {
+            Controls.Children.Clear();
+            SettingsUserControl SUC = new SettingsUserControl(curruser);
+            Controls.Children.Add(SUC);
         }
     }
 }

@@ -21,6 +21,8 @@ namespace metallica_client
     /// </summary>
     public partial class MainWindow : Window
     {
+        MetallicaService.MetallicaServiceClient clientService;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,5 +48,7 @@ namespace metallica_client
             nav.Show();
             this.Hide();
         }
+
+
     }
 }

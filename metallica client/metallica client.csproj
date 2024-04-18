@@ -111,11 +111,17 @@
     <Compile Include="MessageBar.xaml.cs">
       <DependentUpon>MessageBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingsUserControl.xaml.cs">
+      <DependentUpon>SettingsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowUserControl.xaml.cs">
       <DependentUpon>ShowUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SongChooserUserControl.xaml.cs">
+      <DependentUpon>SongChooserUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SongUserControl.xaml.cs">
       <DependentUpon>SongUserControl.xaml</DependentUpon>
@@ -187,11 +193,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SettingsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SongChooserUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,6 +253,9 @@
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.AlbumList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.CategoryList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.Chat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -251,13 +268,13 @@
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.MessagesList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.Show.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.ShowList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.Song.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.SongCategoryList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MetallicaService\metallica_client.MetallicaService.SongList.datasource">

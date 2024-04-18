@@ -100,7 +100,8 @@
                           FontSize="18"
                           x:Name="buttonList">
                     <ListViewItem Height="45"
-                                  Padding="0">
+                                  Padding="0"
+                                  Selected="Logout">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10 0">
                             <materialDesign:PackIcon Kind="logout"
@@ -186,7 +187,8 @@
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45"
-                                  Padding="0">
+                                  Padding="0"
+                                  Selected="SettingsSelected">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10 0">
                             <materialDesign:PackIcon Kind="Settings"
@@ -202,7 +204,8 @@
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45"
-                                  Padding="0">
+                                  Padding="0"
+                                  Selected="Exit">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10 0">
                             <materialDesign:PackIcon Kind="ExitRun"
