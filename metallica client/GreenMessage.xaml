@@ -11,7 +11,7 @@
         <Grid Background="LightGreen" Width="350">
         <Grid.RowDefinitions>
             <RowDefinition Height="51*" />
-            <RowDefinition Height="257*" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock x:Name="user"
                    Grid.Row="0"

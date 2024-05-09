@@ -33,18 +33,18 @@ namespace metallica_client
             chat = cchat;
             nav = cnav;
         }
-
-        private void SendMessage(object sender, RoutedEventArgs e)
-        {
-            send();
-        }
-
         private void enterPressed(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
                 send();
             }
+        }
+
+
+        private void SendMessage(object sender, RoutedEventArgs e)
+        {
+            send();
         }
 
         private void send()

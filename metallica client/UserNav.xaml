@@ -188,6 +188,23 @@
                     </ListViewItem>
                     <ListViewItem Height="45"
                                   Padding="0"
+                                  Selected="SongChooser_Selected">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="10 0">
+                            <materialDesign:PackIcon Kind="Robot"
+                                                     Width="20"
+                                                     Height="20"
+                                                     Foreground="LightSteelBlue"
+                                                     Margin="5"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Text="Song Bot"
+                                       Foreground="White"
+                                       FontWeight="Bold"
+                                       Margin="10" />
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="45"
+                                  Padding="0"
                                   Selected="SettingsSelected">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10 0">
@@ -238,9 +255,9 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ScrollViewer HorizontalAlignment="Left"
+            <ScrollViewer HorizontalAlignment="Center"
                           Background="SlateGray"
-                          VerticalAlignment="Top"
+                          VerticalAlignment="Center"
                           VerticalScrollBarVisibility="Auto"
                           Grid.Row="0">
                 <StackPanel x:Name="Controls" />

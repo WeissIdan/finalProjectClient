@@ -31,7 +31,7 @@ namespace metallica_client
             clientService = new MetallicaService.MetallicaServiceClient();
             User user = new User();
             user.UserName = unameBox.Text;
-            user.Password = passBox.Text;
+            user.Password = passBox.Password;
             user =clientService.Login(user);
             if(user != null)
             {

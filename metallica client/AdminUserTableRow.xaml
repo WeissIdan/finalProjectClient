@@ -25,7 +25,8 @@
                 <TextBlock Text="{Binding ID}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20" 
+                           x:Name="tID"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -33,7 +34,8 @@
                 <TextBlock Text="{Binding UserName}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20"
+                           x:Name="tUserName"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -41,7 +43,8 @@
                 <TextBlock Text="{Binding FirstName}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20"
+                           x:Name="tFirstName"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -49,7 +52,8 @@
                 <TextBlock Text="{Binding LastName}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20"
+                           x:Name="tLastname"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -57,7 +61,8 @@
                 <TextBlock Text="{Binding Password}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20"
+                           x:Name="tPass"/>
             </Border>            
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"

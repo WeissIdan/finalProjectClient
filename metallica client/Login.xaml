@@ -34,13 +34,15 @@
                        Style="{StaticResource MetallicaFont}"
                        FontSize="25"
                        Margin="12" />
-            <TextBox  x:Name="unameBox"/>
+            <TextBox  x:Name="unameBox" Width="210" TextAlignment="Center"/>
             <TextBlock Text="PassworD:"
                        HorizontalAlignment="Center"
                        Style="{StaticResource MetallicaFont}"
                        FontSize="25"
                        Margin="12" />
-            <TextBox x:Name="passBox"/>
+            <PasswordBox x:Name="passBox"
+                         Background="White"
+                         Width="210" HorizontalContentAlignment="Center"/>
             <Button Content="LogiN"
                     Click="Login_Click"
                     Width="80"

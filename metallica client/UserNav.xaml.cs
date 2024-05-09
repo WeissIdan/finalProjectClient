@@ -23,7 +23,6 @@ namespace metallica_client
     {
         MetallicaService.MetallicaServiceClient clientService;
         User curruser;
-        private static Mutex ChatMutex = new Mutex();
 
         public UserNav(User user)
         {
@@ -33,7 +32,6 @@ namespace metallica_client
             {
                 CreateAdminButton();
             }
-            Controls.Children.Add(new SongChooserUserControl(this));
         }
 
         private void Albums_Selected(object sender, RoutedEventArgs e)
@@ -58,7 +56,16 @@ namespace metallica_client
         {
             Controls.Children.Clear();
             messageBarControl.Children.Clear();
-            Controls.Children.Add(new ChatCreatorUserControl(curruser));
+            ChatCreatorUserControl CCUC = new ChatCreatorUserControl(curruser);
+            CCUC.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+            CCUC.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            Controls.Children.Add(CCUC);
+        }        
+        private void SongChooser_Selected(object sender, RoutedEventArgs e)
+        {
+            Controls.Children.Clear();
+            messageBarControl.Children.Clear();
+            Controls.Children.Add(new SongChooserUserControl(this));
         }
 
         private void Chats_Selected(object sender, RoutedEventArgs e)
@@ -71,6 +78,7 @@ namespace metallica_client
             foreach (Chat chat in chats)
             {
                 ChatListUserControl CLUC = new ChatListUserControl(chat, this);
+                CLUC.HorizontalAlignment = HorizontalAlignment.Center;
                 Controls.Children.Add(CLUC);
             }
         }

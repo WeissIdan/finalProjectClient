@@ -23,7 +23,8 @@
                 <TextBlock Text="{Binding ChatName}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20"
+                           x:Name="tName"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -31,7 +32,8 @@
                 <TextBlock Text="{Binding ChatManager}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20" 
+                           x:Name="tManager"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
@@ -39,7 +41,8 @@
                 <TextBlock Text="{Binding CreationDate, StringFormat={}{0:dd/MM/yyyy}}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="20" />
+                           FontSize="20" 
+                           x:Name="tDate"/>
             </Border>
             <Border BorderBrush="SlateGray"
                     BorderThickness="1"
