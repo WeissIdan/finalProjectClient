@@ -19,13 +19,14 @@ namespace metallica_client
     /// <summary>
     /// Interaction logic for SongChooserUserControl.xaml
     /// </summary>
+    enum idList {Thrash_Metal=1,  };
     public partial class SongChooserUserControl : UserControl
     {
         SongList ByGenre = new SongList();
         SongList ByPace = new SongList();
         SongList ByKnowlege = new SongList();
         //SongList ByAlbum;
-        SongList Final;
+        SongList Final = new SongList();
         CategoryList Genres = new CategoryList();
         CategoryList Paces = new CategoryList();
         CategoryList Knowleges = new CategoryList();
@@ -78,17 +79,43 @@ namespace metallica_client
             ByPace = clientService.GetSongsByCategory(pace);
             foreach(Song song in ByGenre)
             {
-                if(ByPace.Contains(song) && ByKnowlege.Contains(song))
+                if(doesPaceContainSong(song) && doesKnowlegeContainSong(song))
                 {
                     Final.Add(song);
                 }
             }
+            Final.OrderBy(Song => Song.AlbumId).ThenBy(Song => Song.ID);
             userNav.Controls.Children.Clear();
-            foreach(Song song in Final)
+            if (Final.Count() == 0)
             {
-                userNav.showSongs(song);
+                MessageBox.Show("no songs with those categories!");
+            }
+            else
+            {
+                foreach (Song song in Final)
+                {
+                    userNav.showSongs(song);
+                }
             }
 
+        }
+        private bool doesPaceContainSong(Song song)
+        {
+            foreach(Song paceSong in ByPace)
+            {
+                if (paceSong.ID == song.ID)
+                    return true;
+            }
+            return false;
+        }  
+        private bool doesKnowlegeContainSong(Song song)
+        {
+            foreach(Song knowlegeSong in ByKnowlege)
+            {
+                if (knowlegeSong.ID == song.ID)
+                    return true;
+            }
+            return false;
         }
     }
 

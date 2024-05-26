@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace metallica_client
 {
-    /// <summary>
-    /// Interaction logic for Login.xaml
-    /// </summary>
     public partial class Login : Window
     {
         MetallicaService.MetallicaServiceClient clientService;

@@ -31,13 +31,42 @@ namespace metallica_client
 
         private void Update(object sender, RoutedEventArgs e)
         {
-            MetallicaService.MetallicaServiceClient clientService = new MetallicaServiceClient();
-            User newUser = cUser;
-            newUser.FirstName = FirstNameTB.Text;
-            newUser.LastName = LastNameTB.Text;
-            newUser.UserName = UserNameTB.Text;
-            newUser.Password = PasswordTB.Text;
-            clientService.UpdateUser(newUser);
+            if (!CheckValidationErrors())
+            {
+                MetallicaService.MetallicaServiceClient clientService = new MetallicaServiceClient();
+                User newUser = cUser;
+                newUser.FirstName = FirstNameTextBox.Text;
+                newUser.LastName = LastNameTextBox.Text;
+                newUser.UserName = UsernameTextBox.Text;
+                newUser.Password = PasswordBox.Password;
+                clientService.UpdateUser(newUser);
+            }
+            else
+            {
+                MessageBox.Show("please fill the informaion correctly");
+            }
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            ValidationPassword valid = new ValidationPassword();
+            ValidationResult result = valid.Validate(PasswordBox.Password, null);
+            if (!result.IsValid)
+            {
+                PasswordBox.BorderBrush = Brushes.DarkRed;
+                PasswordBox.BorderThickness = new Thickness(2);
+                PasswordBox.ToolTip = result.ErrorContent;
+            }
+            else
+            {
+                PasswordBox.BorderThickness = new Thickness(0);
+                PasswordBox.ToolTip = null;
+            }
+        }
+        private bool CheckValidationErrors()
+        {
+            return (Validation.GetHasError(FirstNameTextBox) || Validation.GetHasError(LastNameTextBox) || Validation.GetHasError(UsernameTextBox) || Validation.GetHasError(PasswordBox));
+
         }
     }
 }

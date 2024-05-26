@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Login"
         Height="450"
-        Width="800">
+        Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="MetallicaFont">
             <Setter Property="TextElement.FontFamily"

@@ -19,24 +19,50 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0">
             <TextBlock Text="User Name:" FontSize="20"/>
-            <TextBox Text="{Binding UserName}"
-                     FontSize="20" 
-                     x:Name="UserNameTB"/>
+            <TextBox Name="UsernameTextBox"
+                     Width="200">
+                <Binding Path="UserName"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+
+            </TextBox>
             <TextBlock Text="First Name:"
                        FontSize="20" />
-            <TextBox Text="{Binding FirstName}"
-                     FontSize="20"
-                     x:Name="FirstNameTB" />
+            <TextBox Name="FirstNameTextBox"
+                     Width="200">
+                <Binding Path="FirstName"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <local:ValidationName Min="3"
+                                              Max="20" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
             <TextBlock Text="Last Name:"
                        FontSize="20" />
-            <TextBox Text="{Binding LastName}"
-                     FontSize="20"
-                     x:Name="LastNameTB"/>
+            <TextBox Name="LastNameTextBox"
+                     Width="200">
+                <Binding Path="LastName"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <local:ValidationName Min="3"
+                                              Max="20" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+
             <TextBlock Text="Password:"
                        FontSize="20" />
-            <TextBox Text="{Binding Password}"
-                     FontSize="20"
-                     x:Name="PasswordTB"/>
+            <PasswordBox Name="PasswordBox"
+                         Background="White"
+                         Width="200"
+                         PasswordChanged="PasswordBox_PasswordChanged" Visibility="Visible"/>
         </StackPanel>
         <Button Grid.Row="1"
                 Grid.Column="1"

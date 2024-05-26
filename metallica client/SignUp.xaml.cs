@@ -52,24 +52,31 @@ namespace metallica_client
         }   
         private void SignupButton_Click(object sender, RoutedEventArgs e)
         {
-            clientService = new MetallicaServiceClient();
-            newUser.UserName = UsernameTextBox.Text;
-            newUser.FirstName = FirstNameTextBox.Text;
-            newUser.Accesslevel = USER_ACCESS_LEVEL;
-            newUser.LastName = LastNameTextBox.Text;
-            newUser.Password = PasswordBox.Password;
-            newUser.Email = EmailTextBox.Text;
-            if (MaleRadioButton.IsChecked == true) newUser.IsMale = true;
-            else newUser.IsMale=false;
-            int day = int.Parse(DayComboBox.Text);
-            int month = int.Parse(MonthComboBox.Text);
-            int year = int.Parse(YearComboBox.Text);
-            DateTime time = new DateTime(year, month, day);
-            newUser.Birthdate = time;
-            clientService.InsertUser(newUser);
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+            if (!CheckValidationErrors())
+            {
+                clientService = new MetallicaServiceClient();
+                newUser.UserName = UsernameTextBox.Text;
+                newUser.FirstName = FirstNameTextBox.Text;
+                newUser.Accesslevel = USER_ACCESS_LEVEL;
+                newUser.LastName = LastNameTextBox.Text;
+                newUser.Password = PasswordBox.Password;
+                newUser.Email = EmailTextBox.Text;
+                if (MaleRadioButton.IsChecked == true) newUser.IsMale = true;
+                else newUser.IsMale = false;
+                int day = int.Parse(DayComboBox.Text);
+                int month = int.Parse(MonthComboBox.Text);
+                int year = int.Parse(YearComboBox.Text);
+                DateTime time = new DateTime(year, month, day);
+                newUser.Birthdate = time;
+                clientService.InsertUser(newUser);
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("please fill in evertyrhing correctly!");
+            }
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
@@ -88,6 +95,12 @@ namespace metallica_client
                 PasswordBox.BorderThickness = new Thickness(0);
                 PasswordBox.ToolTip = null;
             }
+        }
+
+        private bool CheckValidationErrors()
+        {
+            return (Validation.GetHasError(FirstNameTextBox) || Validation.GetHasError(LastNameTextBox) || Validation.GetHasError(EmailTextBox) || Validation.GetHasError(UsernameTextBox) || Validation.GetHasError(PasswordBox));
+
         }
     }
 }

@@ -7,24 +7,27 @@
              mc:Ignorable="d"
              d:DesignHeight="350"
              d:DesignWidth="830">
-    <Border CornerRadius="20,20,20,0" Background="LightGreen" Width="390">
-        <Grid Background="LightGreen" Width="350">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="51*" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <TextBlock x:Name="user"
-                   Grid.Row="0"
-                   Text="percy"
-                   HorizontalAlignment="Left"
-                   FontSize="30" />
-        <TextBlock Text="{Binding Message}"
-                   FontSize="25" Grid.Row="1"/>
-
-
-
+    <Border CornerRadius="20,20,20,0"
+            Background="LightGreen"
+            Width="390">
+        <Grid Background="LightGreen"
+              Width="350">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="51*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="user"
+                       Grid.Row="0"
+                       Text="percy"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Width="350" />
+            <TextBlock Text="{Binding Message}"
+                       FontSize="25"
+                       TextWrapping="WrapWithOverflow" Height="auto"
+                       Grid.Row="1"/>
         </Grid>
-        
+
     </Border>
 
 </UserControl>
