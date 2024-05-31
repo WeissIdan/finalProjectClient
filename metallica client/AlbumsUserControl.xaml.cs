@@ -53,8 +53,11 @@ namespace metallica_client
         private void setup()
         {
             clientService = new MetallicaService.MetallicaServiceClient();
-            string Path = "pack://application:,,,../pictures/AlbumCovers/" + album.ID.ToString()+".jpeg";
-            imgCover.Source = new BitmapImage(new Uri(Path));
+            if (album.ID < 12 || album.ID > 0)
+            {
+                string Path = "pack://application:,,,../pictures/AlbumCovers/" + album.ID.ToString() + ".jpeg";
+                imgCover.Source = new BitmapImage(new Uri(Path));
+            }
             double avg = clientService.GetAlbumRating(album.ID);
             int userRating = clientService.GetAlbumRatingByUser(album.ID, user.ID);
             if(userRating > 0) { BasicRatingBar.Value = userRating; }

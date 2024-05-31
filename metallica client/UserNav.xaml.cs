@@ -31,7 +31,9 @@ namespace metallica_client
             if (curruser.Accesslevel == 1)
             {
                 CreateAdminButton();
+                CreateNewSongButton();
             }
+
         }
 
         private void Albums_Selected(object sender, RoutedEventArgs e)
@@ -192,7 +194,46 @@ namespace metallica_client
 
             buttonList.Items.Add(listItem);
         }
+        public void CreateNewSongButton()
+        {
+            StackPanel panel = new StackPanel();
+            panel.Orientation = Orientation.Horizontal;
+            panel.Margin = new Thickness(10, 0, 0, 0);
 
+            MaterialDesignThemes.Wpf.PackIcon icon = new MaterialDesignThemes.Wpf.PackIcon();
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.LibraryAdd;
+            icon.Width = 20;
+            icon.Height = 20;
+            icon.Foreground = Brushes.LightSteelBlue;
+            icon.Margin = new Thickness(5);
+            icon.VerticalAlignment = VerticalAlignment.Center;
+            icon.FontFamily = new FontFamily("/fonts/#Metallica");
+            panel.Children.Add(icon);
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = "New Data";
+            textBlock.Foreground = Brushes.White;
+            textBlock.Margin = new Thickness(10);
+            textBlock.FontWeight = FontWeights.Bold;
+            panel.Children.Add(textBlock);
+
+            ListViewItem listItem = new ListViewItem();
+            listItem.Height = 45;
+            listItem.Padding = new Thickness(0);
+            listItem.Selected += CreateSongSelected;
+            listItem.Content = panel;
+
+            buttonList.Items.Add(listItem);
+        }
+        private void CreateSongSelected(object sender, RoutedEventArgs e)
+        {
+            Controls.Children.Clear();
+            CreateSongUserControl CRUC = new CreateSongUserControl();
+            CreateAlbumUserControl CAUC = new CreateAlbumUserControl();
+
+            Controls.Children.Add(CRUC);
+            Controls.Children.Add(CAUC);
+        }
         private void SettingsSelected(object sender, RoutedEventArgs e)
         {
             Controls.Children.Clear();

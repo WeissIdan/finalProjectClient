@@ -806,6 +806,12 @@ namespace metallica_client.MetallicaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/DeleteSong", ReplyAction="http://tempuri.org/IMetallicaService/DeleteSongResponse")]
         System.Threading.Tasks.Task<int> DeleteSongAsync(metallica_client.MetallicaService.Song song);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetLastSongId", ReplyAction="http://tempuri.org/IMetallicaService/GetLastSongIdResponse")]
+        int GetLastSongId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetLastSongId", ReplyAction="http://tempuri.org/IMetallicaService/GetLastSongIdResponse")]
+        System.Threading.Tasks.Task<int> GetLastSongIdAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMetallicaService/GetAllUser", ReplyAction="http://tempuri.org/IMetallicaService/GetAllUserResponse")]
         metallica_client.MetallicaService.UserList GetAllUser();
         
@@ -1192,6 +1198,14 @@ namespace metallica_client.MetallicaService {
         
         public System.Threading.Tasks.Task<int> DeleteSongAsync(metallica_client.MetallicaService.Song song) {
             return base.Channel.DeleteSongAsync(song);
+        }
+        
+        public int GetLastSongId() {
+            return base.Channel.GetLastSongId();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetLastSongIdAsync() {
+            return base.Channel.GetLastSongIdAsync();
         }
         
         public metallica_client.MetallicaService.UserList GetAllUser() {

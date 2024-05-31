@@ -101,6 +101,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="CreateAlbumUserControl.xaml.cs">
+      <DependentUpon>CreateAlbumUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSongUserControl.xaml.cs">
+      <DependentUpon>CreateSongUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GrayMessage.xaml.cs">
       <DependentUpon>GrayMessage.xaml</DependentUpon>
     </Compile>
@@ -159,6 +165,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChatListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAlbumUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateSongUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

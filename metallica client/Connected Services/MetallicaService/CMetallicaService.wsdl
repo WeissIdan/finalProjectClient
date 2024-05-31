@@ -151,6 +151,12 @@
   <wsdl:message name="IMetallicaService_DeleteSong_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteSongResponse" />
   </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetLastSongId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastSongId" />
+  </wsdl:message>
+  <wsdl:message name="IMetallicaService_GetLastSongId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastSongIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IMetallicaService_GetAllUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUser" />
   </wsdl:message>
@@ -415,6 +421,10 @@
     <wsdl:operation name="DeleteSong">
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/DeleteSong" message="tns:IMetallicaService_DeleteSong_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/DeleteSongResponse" message="tns:IMetallicaService_DeleteSong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSongId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetLastSongId" message="tns:IMetallicaService_GetLastSongId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMetallicaService/GetLastSongIdResponse" message="tns:IMetallicaService_GetLastSongId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IMetallicaService/GetAllUser" message="tns:IMetallicaService_GetAllUser_InputMessage" />
@@ -740,6 +750,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteSong">
       <soap:operation soapAction="http://tempuri.org/IMetallicaService/DeleteSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSongId">
+      <soap:operation soapAction="http://tempuri.org/IMetallicaService/GetLastSongId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
